@@ -1,9 +1,4 @@
-FROM eclipse-temurin:11-jre
-
+FROM openjdk:11-jdk-slim
 WORKDIR /app
-
-COPY target/ai-cloud-api-1.0-SNAPSHOT.jar app.jar
-
-ENV PORT 8080
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY . .
+CMD ["java", "-jar", "ai-cloud-api-1.0-SNAPSHOT.jar"]
